@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LanCamera</string>
+    <string name="setting">Setting</string>
+    <string name="general">General</string>
+    <string name="server_address">Server address</string>
+    <string name="server_address_key">server_address_key</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="action_bar_up_description">Back</string>
+    <string name="empty"/>
+    <string name="server_address_hint">rtsp://test:123456@192.168.2.155/live</string>
+</resources>

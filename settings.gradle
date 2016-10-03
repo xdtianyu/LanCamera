@@ -1,0 +1,1 @@
+include ':player', ':ijkplayer-java', ':giraffeplayer', ':app'

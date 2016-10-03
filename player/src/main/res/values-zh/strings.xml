@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">网络摄像头</string>
+    <string name="setting">设置</string>
+    <string name="general">一般</string>
+    <string name="server_address">服务器地址</string>
+</resources>

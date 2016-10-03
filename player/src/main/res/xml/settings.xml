@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jenzz.materialpreference.PreferenceCategory
+        android:title="@string/general">
+        <com.jenzz.materialpreference.Preference
+            android:key="@string/server_address_key"
+            android:title="@string/server_address"/>
+    </com.jenzz.materialpreference.PreferenceCategory>
+
+</PreferenceScreen>
