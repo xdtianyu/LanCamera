@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withName(R.string.live)
+        PrimaryDrawerItem liveItem = new PrimaryDrawerItem().withName(R.string.live)
                 .withIdentifier(ID_LIVE);
         mHistoryItem = new ExpandableDrawerItem().withName(R.string.history)
                 .withSubItems(mHistoryItems)
                 .withIdentifier(ID_HISTORY);
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withName(R.string.setting)
+        PrimaryDrawerItem settingItem = new PrimaryDrawerItem().withName(R.string.setting)
                 .withIdentifier(ID_SETTING);
 
         mDrawer = new DrawerBuilder()
@@ -75,11 +75,10 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
                 .withRootView(R.id.container)
                 .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)
-                .addDrawerItems(new PrimaryDrawerItem())
-                .addDrawerItems(item1)
+                .addDrawerItems(liveItem)
                 .addDrawerItems(mHistoryItem)
                 .addDrawerItems(new DividerDrawerItem())
-                .addDrawerItems(item3)
+                .addDrawerItems(settingItem)
                 .withOnDrawerItemClickListener(this)
                 .build();
 
