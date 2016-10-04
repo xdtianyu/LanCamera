@@ -5,7 +5,7 @@
     <string name="server_address">Server address</string>
     <string name="server_address_key" translatable="false">server_address_key</string>
     <string name="ok">OK</string>
-    <string name="cancel" translatable="false">Cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="action_bar_up_description">Back</string>
     <string name="empty" translatable="false"/>
     <string name="server_address_hint" translatable="false">rtsp://test:123456@192.168.2.155/live</string>
@@ -13,5 +13,5 @@
     <string name="history">History</string>
     <string name="history_address_key" translatable="false">history_address_key</string>
     <string name="history_address">History address</string>
-    <string name="history_address_hint">http://test:123456@192.168.5.155/usb</string>
+    <string name="history_address_hint" translatable="false">http://test:123456@192.168.5.155/usb</string>
 </resources>

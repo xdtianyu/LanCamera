@@ -7,6 +7,7 @@
     <string name="action_bar_up_description">返回</string>
     <string name="live">直播</string>
     <string name="ok">确定</string>
+    <string name="cancel">取消</string>
     <string name="history">历史</string>
     <string name="history_address">历史服务器地址</string>
 </resources>
