@@ -39,6 +39,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import tcking.github.com.giraffeplayer.GiraffePlayer;
 
+import static org.xdty.lancamera.R.string.history;
+
 public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerItemClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
 
         PrimaryDrawerItem liveItem = new PrimaryDrawerItem().withName(R.string.live)
                 .withIdentifier(ID_LIVE);
-        mHistoryItem = new ExpandableDrawerItem().withName(R.string.history)
+        mHistoryItem = new ExpandableDrawerItem().withName(history)
                 .withSubItems(mHistoryItems)
                 .withIdentifier(ID_HISTORY);
         PrimaryDrawerItem settingItem = new PrimaryDrawerItem().withName(R.string.setting)
@@ -105,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
         String url = mPrefs.getString(getString(R.string.history_address_key), "");
 
         if (!TextUtils.isEmpty(url)) {
-            player.play(url + "/" + history.getPath() + "/" + history.getName());
+            url += "/" + history.getPath() + "/" + history.getName();
+            player.play(url);
             player.setTitle(url);
         }
     }
@@ -154,8 +157,9 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
                     public void onResponse(Call<List<History>> call,
                             Response<List<History>> response) {
                         subItems.clear();
-                        for (History history : response.body()) {
-
+                        List<History> histories = response.body();
+                        for (int i = histories.size() - 1; i >= 0; i--) {
+                            History history = histories.get(i);
                             history.setPath(path);
 
                             IDrawerItem drawerItem;
