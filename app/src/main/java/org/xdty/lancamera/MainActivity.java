@@ -158,6 +158,9 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
                             Response<List<History>> response) {
                         subItems.clear();
                         List<History> histories = response.body();
+                        if (histories == null) {
+                            return;
+                        }
                         for (int i = histories.size() - 1; i >= 0; i--) {
                             History history = histories.get(i);
                             history.setPath(path);
