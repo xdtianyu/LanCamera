@@ -68,6 +68,17 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 }
             });
+            Preference historyPreference =
+                    findPreference(getString(R.string.history_address_key));
+            historyPreference.setOnPreferenceClickListener(
+                    new Preference.OnPreferenceClickListener() {
+                        @Override
+                        public boolean onPreferenceClick(Preference preference) {
+                            showEditDialog(R.string.history_address_key, R.string.history_address,
+                                    R.string.empty, R.string.history_address_hint);
+                            return true;
+                        }
+                    });
         }
 
         private void showEditDialog(int keyId, int title, final int defaultText, int hint) {
