@@ -32,6 +32,11 @@ dependencies {
         transitive = true
     }
 
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
+
     compile project(':giraffeplayer')
 
     testCompile 'junit:junit:4.12'
