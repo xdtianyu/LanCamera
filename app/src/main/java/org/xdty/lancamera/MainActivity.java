@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.VideoView;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
     private final static int ID_HISTORY = 2;
     private final static int ID_SETTING = 3;
     private GiraffePlayer player;
-    private VideoView mVideoView;
     private SharedPreferences mPrefs;
     private String mAuth;
     private List<IDrawerItem> mHistoryItems = new ArrayList<>();
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
         mDrawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
-                .withRootView(R.id.app_video_box)
+                .withRootView(R.id.container)
                 .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(new PrimaryDrawerItem())
