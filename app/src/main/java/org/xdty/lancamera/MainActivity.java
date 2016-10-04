@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
 
         if (!TextUtils.isEmpty(url)) {
             player.play(url);
+            player.live(true);
             player.setTitle(url);
         }
     }
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
         if (!TextUtils.isEmpty(url)) {
             url += "/" + history.getPath() + "/" + history.getName();
             player.play(url);
+            player.live(false);
             player.setTitle(url);
         }
     }
@@ -226,7 +228,11 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
     protected void onPause() {
         super.onPause();
         if (player != null) {
-            player.onPause();
+            if (player.isLive()) {
+                player.stop();
+            } else {
+                player.onPause();
+            }
         }
     }
 
@@ -234,7 +240,11 @@ public class MainActivity extends AppCompatActivity implements Drawer.OnDrawerIt
     protected void onResume() {
         super.onResume();
         if (player != null) {
-            player.onResume();
+            if (player.isLive()) {
+                player.start();
+            } else {
+                player.onResume();
+            }
         }
     }
 

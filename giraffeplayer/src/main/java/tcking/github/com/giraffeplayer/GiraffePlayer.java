@@ -1081,6 +1081,10 @@ public class GiraffePlayer {
         return this;
     }
 
+    public boolean isLive() {
+        return isLive;
+    }
+
     public GiraffePlayer toggleAspectRatio(){
         if (videoView != null) {
             videoView.toggleAspectRatio();
